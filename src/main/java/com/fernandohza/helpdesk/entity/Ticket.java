@@ -14,12 +14,12 @@ import com.fernandohza.helpdesk.entity.enums.StatusEnum;
 public class Ticket {
 
 	@Id
-	private int Id;
+	private Integer Id;
 	
 	@DBRef(lazy= true)
 	private User user;
 	
-	private Date data;
+	private Date date;
 	
 	private String title;
 	
@@ -54,12 +54,12 @@ public class Ticket {
 		this.user = user;
 	}
 
-	public Date getData() {
-		return data;
+	public Date getDate() {
+		return date;
 	}
 
-	public void setData(Date data) {
-		this.data = data;
+	public void setDate(Date date) {
+		this.date = date;
 	}
 
 	public String getTitle() {

@@ -16,7 +16,7 @@ import com.fernandohza.helpdesk.entity.enums.ProfileEnum;
 public class User {
 
 	@Id
-	private int Id;
+	private Integer Id;
 	
 	@Indexed(unique= true)
 	@NotBlank(message="Email required")
