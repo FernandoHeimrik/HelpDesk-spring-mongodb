@@ -6,6 +6,6 @@ import com.fernandohza.helpdesk.entity.User;
 
 public interface UserRepository extends MongoRepository<User, Integer>{
 	
-	User findByEmail(User email);
+	User findByEmail(String email);
 
 }
