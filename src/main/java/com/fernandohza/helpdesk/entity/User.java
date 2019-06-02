@@ -16,7 +16,7 @@ import com.fernandohza.helpdesk.entity.enums.ProfileEnum;
 public class User {
 
 	@Id
-	private Integer Id;
+	private String Id;
 	
 	@Indexed(unique= true)
 	@NotBlank(message="Email required")
@@ -29,11 +29,11 @@ public class User {
 	
 	private ProfileEnum profile;
 
-	public int getId() {
+	public String getId() {
 		return Id;
 	}
 
-	public void setId(int id) {
+	public void setId(String id) {
 		Id = id;
 	}
 

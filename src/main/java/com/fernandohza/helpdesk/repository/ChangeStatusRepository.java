@@ -6,6 +6,6 @@ import com.fernandohza.helpdesk.entity.ChangeStatus;
 
 public interface ChangeStatusRepository extends MongoRepository<ChangeStatus, Integer>{
 	
-	Iterable<ChangeStatus> finfByTicketIdOrderByDateChangeStatusDesc(Integer ticketid);
+	Iterable<ChangeStatus> findByTicketIdOrderByDateChangeStatusDesc(Integer ticketid);
 
 }

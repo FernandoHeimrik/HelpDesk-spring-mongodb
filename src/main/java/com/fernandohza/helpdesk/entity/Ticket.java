@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -14,7 +15,7 @@ import com.fernandohza.helpdesk.entity.enums.StatusEnum;
 public class Ticket {
 
 	@Id
-	private Integer Id;
+	private String Id;
 	
 	@DBRef(lazy= true)
 	private User user;
@@ -36,13 +37,14 @@ public class Ticket {
 	
 	private String image;
 	
+	@Transient//não salva no banco
 	private List<ChangeStatus> changes;
 
-	public int getId() {
+	public String getId() {
 		return Id;
 	}
 
-	public void setId(int id) {
+	public void setId(String id) {
 		Id = id;
 	}
 

@@ -12,7 +12,7 @@ import com.fernandohza.helpdesk.entity.enums.StatusEnum;
 public class ChangeStatus {
 
 	@Id
-	private Integer Id;
+	private String Id;
 	
 	@DBRef
 	private Ticket ticket;
@@ -24,11 +24,11 @@ public class ChangeStatus {
 	
 	private StatusEnum status;
 
-	public int getId() {
+	public String getId() {
 		return Id;
 	}
 
-	public void setId(int id) {
+	public void setId(String id) {
 		Id = id;
 	}
 
