@@ -7,9 +7,9 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 
 import com.fernandohza.helpdesk.entity.Ticket;
 
-public interface TicketRepository extends MongoRepository<Ticket, Integer>{
+public interface TicketRepository extends MongoRepository<Ticket, String>{
 
-	Page<Ticket> findByUserIdOrderByDateDesc(Pageable pages, Integer userId);
+	Page<Ticket> findByUserIdOrderByDateDesc(Pageable pages, String userId);
 	
 	Page<Ticket> findByTitleIgnoreCaseContainingAndStatusIgnoreCaseContainingAndPriorityIgnoreCaseContainingOrderByDateDesc(
 			String title, String status, String priority,Pageable pages);

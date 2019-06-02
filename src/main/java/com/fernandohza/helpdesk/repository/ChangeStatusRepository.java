@@ -4,8 +4,8 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 
 import com.fernandohza.helpdesk.entity.ChangeStatus;
 
-public interface ChangeStatusRepository extends MongoRepository<ChangeStatus, Integer>{
+public interface ChangeStatusRepository extends MongoRepository<ChangeStatus, String>{
 	
-	Iterable<ChangeStatus> findByTicketIdOrderByDateChangeStatusDesc(Integer ticketid);
+	Iterable<ChangeStatus> findByTicketIdOrderByDateChangeStatusDesc(String ticketid);
 
 }

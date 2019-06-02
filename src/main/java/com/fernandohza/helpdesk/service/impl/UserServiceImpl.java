@@ -29,12 +29,12 @@ public class UserServiceImpl implements UserService{
 	}
 
 	@Override
-	public Optional<User> findById(Integer id) {		
+	public Optional<User> findById(String id) {		
 		return this.userRepository.findById(id);
 	}
 
 	@Override
-	public void delete(Integer id) {
+	public void delete(String id) {
 		this.userRepository.deleteById(id);
 	}
 
