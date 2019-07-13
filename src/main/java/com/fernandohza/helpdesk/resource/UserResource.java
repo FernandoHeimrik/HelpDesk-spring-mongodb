@@ -29,7 +29,6 @@ import com.fernandohza.helpdesk.service.UserService;
 
 @RestController
 @RequestMapping("/api/user")
-@CrossOrigin(origins = "*")
 public class UserResource {
 
 	@Autowired
@@ -115,7 +114,7 @@ public class UserResource {
 		return ResponseEntity.ok(response);
 	}
 	
-	@DeleteMapping(value = "/{id}")
+	@DeleteMapping(value = "{id}")
 	@PreAuthorize("hasAnyRole('ADMIN')")
 	public ResponseEntity<Response<String>> delete(@PathVariable("id") String id) {
 		Response<String> response = new Response<String>();

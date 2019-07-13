@@ -38,7 +38,6 @@ import com.fernandohza.helpdesk.service.UserService;
 
 @RestController
 @RequestMapping("/api/ticket")
-@CrossOrigin(origins = "*")
 public class TicketResource {
 
 	@Autowired
@@ -155,7 +154,7 @@ public class TicketResource {
 		return ResponseEntity.ok(response);
 	}
 	
-	@DeleteMapping(value = "/{id}")
+	@DeleteMapping(value = "{id}")
 	@PreAuthorize("hasAnyRole('CUSTOMER')")
 	public ResponseEntity<Response<String>> delete(@PathVariable("id") String id) {
 		Response<String> response = new Response<String>();
@@ -189,13 +188,13 @@ public class TicketResource {
 	@GetMapping(value = "{page}/{count}/{number}/{title}/{status}/{priority}/{assigned}")
 	@PreAuthorize("hasAnyRole('CUSTOMER','TECHNICIAN')")
     public  ResponseEntity<Response<Page<Ticket>>> findByParams(HttpServletRequest request, 
-    		 							@PathVariable int page, 
-    		 							@PathVariable int count,
-    		 							@PathVariable Integer number,
-    		 							@PathVariable String title,
-    		 							@PathVariable String status,
-    		 							@PathVariable String priority,
-    		 							@PathVariable boolean assigned) {
+    		 							@PathVariable("page") int page, 
+    		 							@PathVariable("count") int count,
+    		 							@PathVariable("number") Integer number,
+    		 							@PathVariable("title") String title,
+    		 							@PathVariable("status") String status,
+    		 							@PathVariable("priority") String priority,
+    		 							@PathVariable("assigned") boolean assigned) {
 		
 		title = title.equals("uninformed") ? "" : title;
 		status = status.equals("uninformed") ? "" : status;
@@ -221,7 +220,7 @@ public class TicketResource {
 		return ResponseEntity.ok(response);
     }
 	
-	@PutMapping(value = "/{id}/{status}")
+	@PutMapping(value = "{id}/{status}")
 	@PreAuthorize("hasAnyRole('CUSTOMER','TECHNICIAN')")
 	public ResponseEntity<Response<Ticket>> changeStatus(
 													@PathVariable("id") String id, 
